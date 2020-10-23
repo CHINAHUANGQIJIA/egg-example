@@ -1,16 +1,20 @@
 {
-  "name": "example",
+  "name": "egg-hello",
   "version": "1.0.0",
-  "description": "",
+  "description": "egg-init",
   "private": true,
   "egg": {
     "declarations": true
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "egg": "^2.15.1",
     "egg-cors": "^2.2.3",
+    "egg-jwt": "^3.1.7",
+    "egg-redis": "^2.4.0",
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^6.0.0",
+    "egg-valparams": "^1.4.3",
     "mysql2": "^2.2.5"
   },
   "devDependencies": {
@@ -27,8 +31,8 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-example",
-    "stop": "egg-scripts stop --title=egg-server-example",
+    "start": "egg-scripts start --daemon --title=egg-server-egg-hello",
+    "stop": "egg-scripts stop --title=egg-server-egg-hello",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
@@ -45,6 +49,6 @@
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "crq",
   "license": "MIT"
 }

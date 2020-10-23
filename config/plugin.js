@@ -1,5 +1,4 @@
 'use strict';
-// {app_root}/config/plugin.js
 
 /** @type Egg.EggPlugin */
 module.exports = {
@@ -7,8 +6,21 @@ module.exports = {
     enable: true,
     package: 'egg-cors',
   },
-  // had enabled by egg
-  // static: {
-  //   enable: true,
-  // }
+  sequelize : {
+    enable: true,
+    package: 'egg-sequelize',
+  },
+  valparams: {
+    enable: true,
+    package: 'egg-valparams',
+  },
+  redis: {
+    enable: true,
+    package: 'egg-redis',
+  },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt',
+  },
 };
+
