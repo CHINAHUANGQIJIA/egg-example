@@ -98,7 +98,7 @@ module.exports = (appInfo) => {
     // mode: 'stream',
     mode: "file",
     fileExtensions: [
-      // 允许上传的图片类型
+      // 允许上传的s图片类型
       ".jpg",
       ".jpeg",
       ".png",
