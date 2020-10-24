@@ -1,6 +1,6 @@
 "use strict";
 
-// 引入ss
+// 引入
 const crypto = require("crypto");
 module.exports = (app) => {
   const { STRING, INTEGER, DATE, ENUM, TEXT } = app.Sequelize;

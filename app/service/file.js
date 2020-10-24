@@ -16,7 +16,7 @@ class FileService extends Service {
     }
     return f;
   }
-  // 文件是否存在
+  // 文件是否存
   async isExist(id) {
     let f = await this.app.model.File.findOne({
       where: {
