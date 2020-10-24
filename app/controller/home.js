@@ -13,7 +13,7 @@ class HomeController extends Controller {
       data: [
         {
           type: 'dir',
-          name: '我的笔记',
+          name: '我的笔记o',
           create_time: '2020-10-21 08:00',
           checked: false
         },
