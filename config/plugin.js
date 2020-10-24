@@ -1,6 +1,6 @@
 'use strict';
 
-/** @type Egg.EggPlugin s*/
+/** @type Egg.EggPlugin */
 module.exports = {
   cors: {
     enable: true,

@@ -6,7 +6,7 @@ class UserController extends Controller {
   // 注册
   async reg() {
     const { ctx, app } = this;
-    // 参数验证，用户名至少5个字符，最长20个字符，密码和确认密码必须一致
+    // 参数验证，2用户名至少5个字符，最长20个字符，密码和确认密码必须一致
     ctx.validate({
       username: {
         required: true,
