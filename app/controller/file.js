@@ -9,7 +9,7 @@ class FileController extends Controller {
     const currentUser = ctx.authUser;
     console.log(ctx.request.files);
     if (!ctx.request.files) {
-      return ctx.apiFail("请先选择传文件");
+      return ctx.apiFail("请先选择上传文件");
     }
     ctx.validate({
       file_id: {
