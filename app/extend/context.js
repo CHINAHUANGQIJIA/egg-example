@@ -22,6 +22,7 @@ module.exports = {
       Math.random().toString().substr(3, length) + Date.now()
     ).toString(36);
   },
+
   // 是否是移动端访问
   ismobile() {
     const userAgent = this.request.header['user-agent'].toLowerCase();
