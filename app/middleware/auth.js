@@ -26,7 +26,7 @@ module.exports = (option, app) => {
       ctx.throw(400, 'Token 令牌不合法!');
     }
 
-    // 4. 获取当前用户，验证当前用户是否存在
+    // 4. 获取当前用，验证当前用户是否存在
     user = await app.model.User.findOne({
       where: {
         id: user.id,

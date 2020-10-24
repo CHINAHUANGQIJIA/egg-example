@@ -1,5 +1,5 @@
-'use strict';
-const Service = require('egg').Service;
+"use strict";
+const Service = require("egg").Service;
 
 class CacheService extends Service {
   /**
@@ -12,7 +12,7 @@ class CacheService extends Service {
     const { redis } = this.app;
     let data = await redis.lrange(key, 0, -1);
     if (isChildObject) {
-      data = data.map(item => {
+      data = data.map((item) => {
         return JSON.parse(item);
       });
     }
@@ -26,15 +26,15 @@ class CacheService extends Service {
    * @param {Number} expir 过期时间 单位秒
    * @return { Number } 返回索引
    */
-  async setList(key, value, type = 'push', expir = 0) {
+  async setList(key, value, type = "push", expir = 0) {
     const { redis } = this.app;
     if (expir > 0) {
       await redis.expire(key, expir);
     }
-    if (typeof value === 'object') {
+    if (typeof value === "object") {
       value = JSON.stringify(value);
     }
-    if (type === 'push') {
+    if (type === "push") {
       return await redis.rpush(key, value);
     }
     return await redis.lpush(key, value);
@@ -52,8 +52,7 @@ class CacheService extends Service {
     if (expir === 0) {
       return await redis.set(key, JSON.stringify(value));
     }
-    return await redis.set(key, JSON.stringify(value), 'EX', expir);
-
+    return await redis.set(key, JSON.stringify(value), "EX", expir);
   }
 
   /**
@@ -79,7 +78,6 @@ class CacheService extends Service {
       return await redis.incr(key);
     }
     return await redis.incrby(key, number);
-
   }
 
   /**
@@ -93,7 +91,7 @@ class CacheService extends Service {
   }
 
   /**
-   * 删除指定key
+   * 删除指key
    * @param {String} key
    */
   async remove(key) {

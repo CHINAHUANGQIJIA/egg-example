@@ -25,7 +25,7 @@ class FileController extends Controller {
     // 目录id是否存在
     if (file_id > 0) {
       console.log(file_id + "&&&&&&&&&大撒大撒");
-      // 目录是否存在,存在就返回目录对象，从而取得目录名字，不存在直接在service就出错返回了
+      // 目录是否在,存在就返回目录对象，从而取得目录名字，不存在直接在service就出错返回了
       await service.file.isDirExist(file_id).then((res) => {
         console.log(res + ">>>>>>>>>>");
         f = res;
