@@ -6,7 +6,7 @@ class UserController extends Controller {
   // 注册
   async reg() {
     const { ctx, app } = this;
-    // 参数验证，2用户名至少5个字符，最长20个字符，密码和确认密码必须一致
+    // 参数验证，用户名至少5个字符，最长20个字符，密码和确认密码必须一致
     ctx.validate({
       username: {
         required: true,
@@ -106,15 +106,6 @@ class UserController extends Controller {
 
     ctx.apiSuccess(user);
   }
-  // 退出登录
-  async logout() {
-    const { ctx, service } = this;
-    const currentUserId = ctx.authUser.id;
-    if (!(await service.cache.remove("user_" + currentUserId))) {
-      ctx.throw(400, "退出登录失败s");
-    }
-    ctx.apiSuccess("退出登录成功");
-  }
 
   // 验证密码
   checkPassword(password, hash_password) {
@@ -124,6 +115,23 @@ class UserController extends Controller {
       this.ctx.throw(400, "密码错误");
     }
     return true;
+  }
+  // 退出登录
+  async logout() {
+    const { ctx, service } = this;
+    const currentUserId = ctx.authUser.id;
+    if (!(await service.cache.remove("user_" + currentUserId))) {
+      ctx.throw(400, "退出登录失败");
+    }
+    ctx.apiSuccess("退出登录成功");
+  }
+  // 剩余容量
+  async getSize() {
+    const { ctx, service } = this;
+    return ctx.apiSuccess({
+      total_size: ctx.authUser.total_size,
+      used_size: ctx.authUser.used_size,
+    });
   }
 }
 

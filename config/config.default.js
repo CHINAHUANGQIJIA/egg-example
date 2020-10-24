@@ -86,7 +86,7 @@ module.exports = (appInfo) => {
     client: {
       accessKeyId: "LTAI4G27HYpdCr2opf6hbgV3",
       accessKeySecret: "hUJYAJ9R2gsu87Egrs3HEfziGNaD8g",
-      bucket: "my-egg-oss",
+      bucket: "jojoho",
       endpoint: "oss-cn-beijing.aliyuncs.com",
       timeout: "60s",
     },
